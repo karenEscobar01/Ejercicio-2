@@ -1,0 +1,24 @@
+CREATE DATABASE Ejercicio_2
+
+USE Ejercicio_2
+
+CREATE TABLE DEPARTAMENTO (
+DeptID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    NombreDepto VARCHAR(100) NOT NULL,
+    Ubicacion VARCHAR(100) NOT NULL,
+    );
+    
+CREATE TABLE IF NOT EXISTS EMPLEADO (
+    EmpID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Apellido VARCHAR(100) NOT NULL,
+    Edad INT NOT NULL,
+    Salario DECIMAL(10, 2) NOT NULL,
+    DeptID INT NOT NULL,
+    CONSTRAINT fk_empleado_departamento
+        FOREIGN KEY (DeptID)
+        REFERENCES DEPARTAMENTO (DeptID)
+        );
+
+        
+    
